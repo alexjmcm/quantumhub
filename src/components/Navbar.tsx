@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { Menu, X, Code, Atom, BookOpen, Users, Menu as MenuIcon } from 'lucide-react';
 
 const Navbar: React.FC = () => {
@@ -22,39 +23,44 @@ const Navbar: React.FC = () => {
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
             <div className="flex-shrink-0">
-              <div className="flex items-center">
+              <Link to="/" className="flex items-center">
                 <Atom className="h-8 w-8 text-purple-500" />
                 <span className="ml-2 text-white font-bold text-xl">QuantumHub</span>
-              </div>
+              </Link>
             </div>
             <div className="hidden md:block">
               <div className="ml-10 flex items-baseline space-x-4">
-                <a href="#learn" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors flex items-center">
+                <Link to="/#learn" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors flex items-center">
                   <BookOpen className="w-4 h-4 mr-1" />
                   Learn
-                </a>
-                <a href="#code" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors flex items-center">
+                </Link>
+                <Link to="/#code" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors flex items-center">
                   <Code className="w-4 h-4 mr-1" />
                   Code
-                </a>
-                <a href="#community" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors flex items-center">
+                </Link>
+                <Link to="/#community" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors flex items-center">
                   <Users className="w-4 h-4 mr-1" />
                   Community
-                </a>
-                <a href="#tools" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors flex items-center">
+                </Link>
+                <Link to="/#tools" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors flex items-center">
                   <MenuIcon className="w-4 h-4 mr-1" />
                   Tools
-                </a>
+                </Link>
+                <Link to="/playground" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors flex items-center">
+                  <Code className="w-4 h-4 mr-1" />
+                  Playground
+                </Link>
               </div>
             </div>
           </div>
           <div className="hidden md:block">
             <div className="ml-4 flex items-center md:ml-6">
-              <button
+              <Link
+                to="/get-started"
                 className="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors"
               >
                 Get Started
-              </button>
+              </Link>
             </div>
           </div>
           <div className="-mr-2 flex md:hidden">
@@ -76,42 +82,50 @@ const Navbar: React.FC = () => {
       {mobileMenuOpen && (
         <div className="md:hidden bg-slate-800 shadow-lg">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            <a
-              href="#learn"
+            <Link
+              to="/#learn"
               className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium flex items-center"
             >
               <BookOpen className="w-5 h-5 mr-2" />
               Learn
-            </a>
-            <a
-              href="#code"
+            </Link>
+            <Link
+              to="/#code"
               className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium flex items-center"
             >
               <Code className="w-5 h-5 mr-2" />
               Code
-            </a>
-            <a
-              href="#community"
+            </Link>
+            <Link
+              to="/#community"
               className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium flex items-center"
             >
               <Users className="w-5 h-5 mr-2" />
               Community
-            </a>
-            <a
-              href="#tools"
+            </Link>
+            <Link
+              to="/#tools"
               className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium flex items-center"
             >
               <MenuIcon className="w-5 h-5 mr-2" />
               Tools
-            </a>
+            </Link>
+            <Link
+              to="/playground"
+              className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium flex items-center"
+            >
+              <Code className="w-5 h-5 mr-2" />
+              Playground
+            </Link>
           </div>
           <div className="pt-4 pb-3 border-t border-gray-700">
             <div className="px-2">
-              <button
-                className="w-full bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors"
+              <Link
+                to="/get-started"
+                className="w-full bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors block text-center"
               >
                 Get Started
-              </button>
+              </Link>
             </div>
           </div>
         </div>
